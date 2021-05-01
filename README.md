@@ -4,7 +4,7 @@ A simple application to lock the desktop to promote "self control" during specif
 
 ## Setup and Demo Video
 
-[![Alt text](https://www.youtube.com)](https://www.youtube.com/)
+[![](http://img.youtube.com/vi/kbQEjft9mAo/0.jpg)](http://www.youtube.com/watch?v=kbQEjft9mAo "")
 
 ## Configuration format
 
