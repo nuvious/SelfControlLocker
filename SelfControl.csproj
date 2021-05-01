@@ -4,7 +4,19 @@
     <OutputType>WinExe</OutputType>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <UseWindowsForms>true</UseWindowsForms>
+    <Version>1.0.2</Version>
+    <Authors>NuvSoft LLC</Authors>
+    <Company>NuvSoft LLC</Company>
+    <Product>Self Control Locker</Product>
+    <Copyright>David Cheeseman</Copyright>
+    <PackageLicenseExpression>Proprietary</PackageLicenseExpression>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="SelfControlInstaller\**" />
+    <EmbeddedResource Remove="SelfControlInstaller\**" />
+    <None Remove="SelfControlInstaller\**" />
+  </ItemGroup>
 
   <ItemGroup>
     <Compile Update="Properties\Resources.Designer.cs">

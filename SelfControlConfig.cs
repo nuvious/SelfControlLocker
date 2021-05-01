@@ -6,16 +6,25 @@ using System.Text;
 namespace SelfControl
 {
     [Serializable]
-    class SelfControlConfig
+    class SelfControlConfig : Dictionary<int, DailyConfig>
+    {
+        public SelfControlConfig() : base()
+        {
+            for(int i = 1; i <= 7; i++)
+            {
+                Add(i, new DailyConfig());
+            }
+        }
+    }
+
+    [Serializable]
+    class DailyConfig
     {
         [JsonIgnore]
         public const int DEFAULT_DELAY = 30000;
 
         [JsonProperty("delay")]
         private int delay = DEFAULT_DELAY;
-        
-        [JsonProperty("weekdays")]
-        private LinkedList<int> weekdays = new LinkedList<int>();
 
         /// <summary>
         /// Start hour in the range of [0,23]
@@ -43,23 +52,6 @@ namespace SelfControl
             set
             {
                 delay = value;
-            }
-        }
-
-        /// <summary>
-        /// An array of days to repeat the locking time window in the range
-        /// of [0,6] with 0 being Sunday.
-        /// </summary>
-        [JsonIgnore]
-        public LinkedList<int> Weekdays
-        {
-            get
-            {
-                return weekdays;
-            }
-            set
-            {
-                weekdays = value;
             }
         }
     }

@@ -59,10 +59,11 @@ namespace SelfControl
                     break;
                 }
                 DateTime curr = DateTime.Now;
-                DateTime start = new DateTime(curr.Year, curr.Month, curr.Day, config.Start, 0, 0);
-                DateTime finish = new DateTime(curr.Year, curr.Month, curr.Day, config.End, 0, 0);
+                DailyConfig currConfig = config[(int)curr.DayOfWeek];
+                DateTime start = new DateTime(curr.Year, curr.Month, curr.Day, currConfig.Start, 0, 0);
+                DateTime finish = new DateTime(curr.Year, curr.Month, curr.Day, currConfig.End, 0, 0);
 
-                if (config.Weekdays.Contains((int)curr.DayOfWeek) && curr > start && curr < finish)
+                if (curr > start && curr < finish)
                 {
                     if (!LockCheck.IsWorkstationLocked())
                     {
@@ -70,7 +71,7 @@ namespace SelfControl
                     }
                 }
 
-                Thread.Sleep(config.Delay);
+                Thread.Sleep(currConfig.Delay);
             }
         }
     }
