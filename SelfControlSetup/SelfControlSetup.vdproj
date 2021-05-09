@@ -183,15 +183,15 @@
         {
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Self Control Locker"
-        "ProductCode" = "8:{35BAEE6A-1D51-40DC-A754-62E9194874A4}"
-        "PackageCode" = "8:{07A9E142-1800-40A4-95C4-168613515F2F}"
+        "ProductCode" = "8:{0ED09C15-F988-4AA3-90A0-87A215C27292}"
+        "PackageCode" = "8:{82D2487E-1B88-43C0-92E1-86B850E945ED}"
         "UpgradeCode" = "8:{6787AEBD-7F6A-4953-84F5-3D7835FBE8A4}"
         "AspNetVersion" = "8:2.0.50727.0"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:TRUE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:FALSE"
-        "ProductVersion" = "8:1.0.4"
+        "ProductVersion" = "8:1.0.5"
         "Manufacturer" = "8:Nuvsolft LLC"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"
@@ -733,7 +733,7 @@
         {
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_D0B250320A1742B0B13CE2D8CF39CD6A"
             {
-            "SourcePath" = "8:..\\obj\\Release\\netcoreapp3.1\\apphost.exe"
+            "SourcePath" = "8:..\\obj\\Debug\\netcoreapp3.1\\apphost.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_064ABE48E2584C0B9E0CED06A7328BE3"

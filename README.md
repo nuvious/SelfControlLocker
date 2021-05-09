@@ -21,3 +21,9 @@ The configuration file will be auto-generated during the first run and is a dict
 delay - Time in ms between attempts to lock the machine.
 start - Start hour to lock the machine. (0 - Midnight)
 end - End hour to stop locking the machine. (16 - 4pm local time)
+
+## Building
+
+This project requires the following plugins to Visual Studios to create installers:
+
+https://marketplace.visualstudio.com/items?itemName=VisualStudioClient.MicrosoftVisualStudio2017InstallerProjects
