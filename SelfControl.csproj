@@ -4,7 +4,7 @@
     <OutputType>WinExe</OutputType>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <UseWindowsForms>true</UseWindowsForms>
-    <Version>1.0.3</Version>
+    <Version>1.0.4</Version>
     <Authors>NuvSoft LLC</Authors>
     <Company>NuvSoft LLC</Company>
     <Product>Self Control Locker</Product>
