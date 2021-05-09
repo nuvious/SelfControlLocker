@@ -8,7 +8,7 @@ A simple application to lock the desktop to promote "self control" during specif
 
 ## Configuration format
 
-The configuration file will be auto-generated during the first run and is a dictionary of integers (1-7 for Mon-Sun) to a daily configuration object in the following format:
+The configuration file will be auto-generated during the first run and is a dictionary of integers (0-6 for Sun-Sat) to a daily configuration object in the following format:
 
 ```json
   "1": {

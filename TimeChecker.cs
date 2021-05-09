@@ -1,14 +1,8 @@
-﻿using Microsoft.Win32;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 using System;
-using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SelfControl
@@ -18,6 +12,26 @@ namespace SelfControl
         const string CONFIG_FILE = "selfcontrol.json";
         public static bool StopTimeChecker = false;
         private static SelfControlConfig config = null;
+
+        private static void dumpConfigTemplateAndExit(string configPath, string message)
+        {
+            var config = new SelfControlConfig();
+            File.WriteAllText(configPath, JsonConvert.SerializeObject(config, Formatting.Indented));
+            MessageBox.Show(
+                            message,
+                            "Self Control",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Information
+                        );
+            new Process
+            {
+                StartInfo = new ProcessStartInfo(configPath)
+                {
+                    UseShellExecute = true
+                }
+            }.Start();
+            Environment.Exit(0);
+        }
 
         public static void DoWork()
         {
@@ -30,27 +44,23 @@ namespace SelfControl
                     // Read config if it exists, if it doesn't dump a default one for the user to edit.
                     if (File.Exists(configPath))
                     {
-                        string jsonText = File.ReadAllText(configPath);
-                        config = JsonConvert.DeserializeObject<SelfControlConfig>(jsonText);
+                        try
+                        {
+                            string jsonText = File.ReadAllText(configPath);
+                            config = JsonConvert.DeserializeObject<SelfControlConfig>(jsonText);
+                        } catch(Exception e) {
+                            dumpConfigTemplateAndExit(
+                                configPath,
+                                "Error reading configuration. Dumping template. Please edit and restart the application."
+                            );
+                        }
                     }
                     else
                     {
-                        config = new SelfControlConfig();
-                        File.WriteAllText(configPath, JsonConvert.SerializeObject(config, Formatting.Indented));
-                        MessageBox.Show(
-                            "Edit ~/selfcontrol.json and restart the application", 
-                            "Self Control",
-                            MessageBoxButtons.OK,
-                            MessageBoxIcon.Information
+                        dumpConfigTemplateAndExit(
+                            configPath,
+                            "Edit ~/selfcontrol.json and restart the application"
                         );
-                        new Process
-                        {
-                            StartInfo = new ProcessStartInfo(configPath)
-                            {
-                                UseShellExecute = true
-                            }
-                        }.Start();
-                        Environment.Exit(0);
                     }
                 }
 

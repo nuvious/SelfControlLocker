@@ -10,7 +10,7 @@ namespace SelfControl
     {
         public SelfControlConfig() : base()
         {
-            for(int i = 1; i <= 7; i++)
+            for(int i = 0; i < 7; i++)
             {
                 Add(i, new DailyConfig());
             }
