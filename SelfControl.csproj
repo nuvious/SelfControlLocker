@@ -10,12 +10,13 @@
     <Product>Self Control Locker</Product>
     <Copyright>David Cheeseman</Copyright>
     <PackageLicenseExpression>Proprietary</PackageLicenseExpression>
+	<EnableDefaultItems>false</EnableDefaultItems>
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="%2a%2a\**" />
+	<Compile Remove="%2a%2a\**" />
     <Compile Remove="SelfControlInstaller\**" />
-    <EmbeddedResource Remove="%2a%2a\**" />
+	<EmbeddedResource Remove="%2a%2a\**" />
     <EmbeddedResource Remove="SelfControlInstaller\**" />
     <None Remove="%2a%2a\**" />
     <None Remove="SelfControlInstaller\**" />
