@@ -13,9 +13,35 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="%2a%2a\**" />
     <Compile Remove="SelfControlInstaller\**" />
+    <EmbeddedResource Remove="%2a%2a\**" />
     <EmbeddedResource Remove="SelfControlInstaller\**" />
+    <None Remove="%2a%2a\**" />
     <None Remove="SelfControlInstaller\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="%2a%2a/%2a.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Remove="%2a%2a/%2a.resx" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="%2a%2a/%2a" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="LockCheck.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="SelfControlConfig.cs" />
+    <Compile Include="TimeChecker.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include=".github\workflows\publish-release.yml" />
   </ItemGroup>
 
   <ItemGroup>
@@ -39,7 +65,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Resources\" />
+    <None Include=".github\workflows\dotnet-desktop.yml" />
+    <None Include=".gitignore" />
+    <None Include="LICENSE.txt" />
+    <None Include="README.md" />
+    <None Include="SelfControl.sln" />
   </ItemGroup>
 
   <ItemGroup>
