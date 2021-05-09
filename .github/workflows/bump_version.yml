@@ -1,0 +1,13 @@
+name: Bump version
+on:
+  push:
+    branches: [ main ]
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@master
+      - name: Github Tag with semantic versioning
+        uses: hennejg/github-tag-action@v4.2.4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
