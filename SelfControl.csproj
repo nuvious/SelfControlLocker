@@ -36,12 +36,18 @@
   <ItemGroup>
     <Compile Include="LockCheck.cs" />
     <Compile Include="Program.cs" />
+    <Compile Include="Properties\Resources.Designer.cs" />
+    <Compile Include="Properties\Settings.Designer.cs" />
     <Compile Include="SelfControlConfig.cs" />
     <Compile Include="TimeChecker.cs" />
   </ItemGroup>
 
   <ItemGroup>
     <Content Include=".github\workflows\publish-release.yml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx" />
   </ItemGroup>
 
   <ItemGroup>
@@ -68,7 +74,11 @@
     <None Include=".github\workflows\dotnet-desktop.yml" />
     <None Include=".gitignore" />
     <None Include="LICENSE.txt" />
+    <None Include="Properties\PublishProfiles\ClickOnceProfile.pubxml" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
+    <None Include="Properties\Settings.settings" />
     <None Include="README.md" />
+    <None Include="Resources\Icon.ico" />
     <None Include="SelfControl.sln" />
   </ItemGroup>
 
